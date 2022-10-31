@@ -2,6 +2,7 @@ variable "sample" {
   default = "hello"
 }
 
+# Variable is not a combination then var.sample, if it is combining with any other string then ${var.sample}
 output "sample" {
   value = var.sample
 }
@@ -64,3 +65,13 @@ variable "sample7" {}
 output "sample7" {
   value = var.sample7
 }
+
+## Pick a variable from SHELL ENV VARIABLE
+#  export TF_VAR_sample8=1234
+variable "sample8" {}
+output "sample8" {
+  value = var.sample8
+}
+
+
+variable "sample9" {}
